@@ -1,0 +1,75 @@
+<div id="like" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title-like">好き</h3>
+  </div>
+  <div class="panel-body">
+    <div id="like" class="panel-list" >
+      <ul id="like">
+        <li id="like_type"><label><input type="checkbox" class="area" value="0">関西</label></li>
+      </ul>
+    </div>
+  </div>
+       <%= submit_tag '嫌い', class: 'btn btn-danger' %>
+</div>     
+
+<div id="dislike" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title-dislike">嫌い</h3>
+  </div>
+  <div class="panel-body">
+    <div id="dislike" class="panel-list" >
+      <ul class="dislike-list">
+        <li><label><input type="checkbox" class="area">関東</label></li>
+        <li><label><input type="checkbox" class="area">北朝鮮</label></li>
+      </ul>
+    </div>
+  </div>
+        <a href="/"><%= submit_tag '好きにする', class: 'btn btn-success' %></a>
+</div>
+<script type="text/javascript" src="http://penta.a.one.impact-ad.jp/dd?oid=b25b43b24a9e171b&rft=k&jsonp=callback"></script>
+<script type='text/javascript'>
+  // callbackFunc = function(jsonData){
+    
+  // }
+
+  // $(document).ready(function(){ 
+	
+  // // 	$("#submit_bt").click(function(){
+	 // 	$.ajax({
+		//   	type: 'GET',
+		// 	  url: 'http://penta.a.one.impact-ad.jp/dd?oid=cb56af1cdaf1cbef&rft=k&jsonp=callback',
+		//   	data:{
+		  		
+		//   		format:'json'
+		//   	},
+		//   	dataType: 'jsonp',
+		//   	jsonp: 'testcallback',//コールバックパラメータ名の指定
+		//   	//jsonpCallback: 'testCallback',//callback関数名を自分で指名した場合
+	 // 	// })
+	 // 	// .done(function(data){
+				
+		//   // 		$.each(data,function(i, item){
+		//   // 			$("#jsonp").append(item.formal  + ' <a href=" ' + item.url_pc + ' " target="_blank"> ' + item.url_pc +'</a><br />');
+		// 	 // 	});
+				
+		// 		//   /*
+		// 	 // 	for(var i=0; i < data.length; i++){
+		// 	 // 		$("#jsonp").append(data[i].formal  + ' <a href=" ' + data[i].url_pc + ' " target="_blank"> ' + data[i].url_pc +'</a><br />');
+		// 	 // 	}
+		// 	 // 	*/
+		//   // })
+		//   // .fail(function(data){
+		// 	 //  $("#jsonp").append("エラーです");
+		//   // });
+	 // });
+  // });
+   
+      var element =document.createElement('script');
+      element.src = 'http://penta.a.one.impact-ad.jp/dd?oid=b25b43b24a9e171b&rft=k&jsonp=callback';
+      document.body.appendChild(element);
+      
+      var callback = function(data){
+        console.log(data);
+      };
+    
+</script>

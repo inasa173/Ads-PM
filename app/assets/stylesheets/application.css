@@ -13,3 +13,82 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar {
+    background-color: orange;
+}
+
+.navbar img{
+    height: 50px;
+    margin: 3px 0 3px 5px;
+}
+
+a.navbar-left-text{
+    font-size: 36px;
+}
+
+#like{
+    float: left;
+    width: 45%;
+}
+
+.panel-title-like{
+    font-size: 36px;
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 0;
+    padding-left: 10px;
+    /*box-sizing: content-box;*/
+}
+
+ul#like {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-left: 0;
+    /*border: solid;*/
+    height: 20em;
+    width: auto;
+}
+
+#dislike{
+    float: right;
+    width: 45%;
+}
+
+.panel-title-dislike{
+    font-size: 36px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+
+.panel{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+}
+
+.panel-body{
+    text-align: left;
+}
+
+.dislike-list {
+    margin-top: 10px;
+    margin-right: 10px;
+    float: left;
+    padding-left: 0;
+    /*border: solid;*/
+    height: 20em;
+}
+
+a{
+    text-align: right;
+}
+
+li {
+    display: inline-block;
+}
