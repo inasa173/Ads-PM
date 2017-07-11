@@ -93,24 +93,24 @@ li {
     display: inline-block;
 }
 
-.interest0 {
-	float: left;
-}
-.interest1 {
-	float: left;
-}
-.interest {
-	overflow: hidden;
-}
+/*.interest0 {*/
+/*	float: left;*/
+/*}*/
+/*.interest1 {*/
+/*	float: left;*/
+/*}*/
+/*.interest {*/
+/*	overflow: hidden;*/
+/*}*/
 
 /* clearfix */
-.interest:before,
-.interest:after {
-    content: "";
-    display: table;
-}
+/*.interest:before,*/
+/*.interest:after {*/
+/*    content: "";*/
+/*    display: table;*/
+/*}*/
  
-.interest:after {
-    clear: both;
-}
+/*.interest:after {*/
+/*    clear: both;*/
+/*}*/
  
