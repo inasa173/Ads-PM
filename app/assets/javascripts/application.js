@@ -78,6 +78,7 @@ var callback = function(data){
 
 
       document.open();
+      document.write('<div>')
   // demographic    
       document.write('<li class="demographic">');
       document.write("demographic" .fontsize(4));
@@ -171,6 +172,6 @@ var callback = function(data){
           };
         document.write('</ul>'+"<br>");
       document.write('</li>');
-      
+      document.write('</div>')
       document.close();
 };
