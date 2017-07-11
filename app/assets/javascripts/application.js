@@ -80,7 +80,7 @@ var callback = function(data){
       document.open();
   // demographic    
       document.write('<li class="demographic">');
-      document.write("demographic");
+      document.write("demographic" .fontsize(4));
        
         for (var i = 0; i < aone_demographic.length; i++){
            document.write('<ul class=demographic' +[i]+'>');
@@ -89,12 +89,12 @@ var callback = function(data){
           };
         $(function(){
             var prism1Array = {"category": [ 
-                      {"id":3675340613,"category_1":"子供（高校生）有無","category_2":"高校生いない"},
-                      {"id":1327062654,"category_1":"性年齢","category_2":"男性：22~29歳"},
-                      {"id":3420598002,"category_1":"未既婚","category_2":"未婚"},
-                      {"id":3722116526,"category_1":"子供（未就学児）有無","category_2":"未就学児いない"},
-                      {"id":3383005355,"category_1":"世帯年収","category_2":"300万未満"},
-                      {"id":3633703723,"category_1":"子供（小学生）有無","category_2":"小学生いない"},
+                      {"id":2101,"category_1":"子供（高校生）有無","category_2":"高校生いない"},
+                      {"id":1016,"category_1":"性年齢","category_2":"男性：22~29歳"},
+                      {"id":1201,"category_1":"未既婚","category_2":"未婚"},
+                      {"id":2401,"category_1":"子供（未就学児）有無","category_2":"未就学児いない"},
+                      {"id":1101,"category_1":"世帯年収","category_2":"300万未満"},
+                      {"id":2301,"category_1":"子供（小学生）有無","category_2":"小学生いない"},
             ]};
             for(var index in prism1Array){
                 $('<p>'+ prism1Array.category[0].id+' / ' +prism1Array.category[0].category_1+' / '+prism1Array.category[0].category_2+'</p>' ).appendTo('ul.demographic0');
@@ -111,7 +111,7 @@ var callback = function(data){
       
   // interest
       document.write('<li class="interest">');
-      document.write("interest");
+      document.write("interest" .fontsize(4));
         for (var i = 0; i < aone_interest.length; i++){
           document.write('<ul class=interest'+[i]+'>');
           // document.write( aone_interest[i] );
@@ -135,8 +135,8 @@ var callback = function(data){
         };
        $(function(){
             var prism3Array = {"category": [ 
-                      {"id":3511973508,"category_1":"各種資料","category_2":""},
-                      {"id":3475145692,"category_1":"各種資料","category_2":"知識探索(Q&A)"},
+                      {"id":207866,"category_1":"各種資料","category_2":""},
+                      {"id":207872,"category_1":"各種資料","category_2":"知識探索(Q&A)"},
             ]};
             for(var index in prism3Array){
                 $('<p>'+ prism3Array.category[0].id+' / ' +prism3Array.category[0].category_1+' / '+prism3Array.category[0].category_2+'</p>' ).appendTo('ul.interest0');
@@ -148,7 +148,7 @@ var callback = function(data){
       
      // aone_zipcode_home
       document.write('<li>');
-      document.write("居住地");
+      document.write("居住地" .fontsize(4));
         document.write('<ul>');
         if (aone_zipcode_home == null ){
           document.write("該当なし");
@@ -164,7 +164,7 @@ var callback = function(data){
       
      //aone_zipcode_work
       document.write('<li>');
-      document.write("勤務地");
+      document.write("勤務地" .fontsize(4));
         document.write('<ul>');
         for (var i = 0; i < aone_zipcode_work.length; i++){
           document.write(aone_zipcode_work[i]+"<br>");
