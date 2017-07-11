@@ -1,75 +1,162 @@
-<div id="like" class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title-like">好き</h3>
-  </div>
-  <div class="panel-body">
-    <div id="like" class="panel-list" >
-      <ul id="like">
-        <li id="like_type"><label><input type="checkbox" class="area" value="0">関西</label></li>
-      </ul>
-    </div>
-  </div>
-       <%= submit_tag '嫌い', class: 'btn btn-danger' %>
-</div>     
+<!--<div id="like" class="panel panel-default">-->
+<!--  <div class="panel-heading">-->
+<!--    <h3 class="panel-title-like">好き</h3>-->
+<!--  </div>-->
+<!--  <div class="panel-body">-->
+<!--    <div id="like" class="panel-list" >-->
+<!--      <ul id="like">-->
+<!--        <li id="like_type"><label><input type="checkbox" class="area" value="0">関西</label></li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--       <%= submit_tag '嫌い', class: 'btn btn-danger' %>-->
+<!--</div>     -->
 
-<div id="dislike" class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title-dislike">嫌い</h3>
-  </div>
-  <div class="panel-body">
-    <div id="dislike" class="panel-list" >
-      <ul class="dislike-list">
-        <li><label><input type="checkbox" class="area">関東</label></li>
-        <li><label><input type="checkbox" class="area">北朝鮮</label></li>
-      </ul>
-    </div>
-  </div>
-        <a href="/"><%= submit_tag '好きにする', class: 'btn btn-success' %></a>
-</div>
+<!--<div id="dislike" class="panel panel-default">-->
+<!--  <div class="panel-heading">-->
+<!--    <h3 class="panel-title-dislike">嫌い</h3>-->
+<!--  </div>-->
+<!--  <div class="panel-body">-->
+<!--    <div id="dislike" class="panel-list" >-->
+<!--      <ul class="dislike-list">-->
+<!--        <li><label><input type="checkbox" class="area">関東</label></li>-->
+<!--        <li><label><input type="checkbox" class="area">北朝鮮</label></li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--        <a href="/"><%= submit_tag '好きにする', class: 'btn btn-success' %></a>-->
+<!--</div>-->
+<div>
 <script type="text/javascript" src="http://penta.a.one.impact-ad.jp/dd?oid=b25b43b24a9e171b&rft=k&jsonp=callback"></script>
-<script type='text/javascript'>
-  // callbackFunc = function(jsonData){
-    
-  // }
 
-  // $(document).ready(function(){ 
-	
-  // // 	$("#submit_bt").click(function(){
-	 // 	$.ajax({
-		//   	type: 'GET',
-		// 	  url: 'http://penta.a.one.impact-ad.jp/dd?oid=cb56af1cdaf1cbef&rft=k&jsonp=callback',
-		//   	data:{
-		  		
-		//   		format:'json'
-		//   	},
-		//   	dataType: 'jsonp',
-		//   	jsonp: 'testcallback',//コールバックパラメータ名の指定
-		//   	//jsonpCallback: 'testCallback',//callback関数名を自分で指名した場合
-	 // 	// })
-	 // 	// .done(function(data){
-				
-		//   // 		$.each(data,function(i, item){
-		//   // 			$("#jsonp").append(item.formal  + ' <a href=" ' + item.url_pc + ' " target="_blank"> ' + item.url_pc +'</a><br />');
-		// 	 // 	});
-				
-		// 		//   /*
-		// 	 // 	for(var i=0; i < data.length; i++){
-		// 	 // 		$("#jsonp").append(data[i].formal  + ' <a href=" ' + data[i].url_pc + ' " target="_blank"> ' + data[i].url_pc +'</a><br />');
-		// 	 // 	}
-		// 	 // 	*/
-		//   // })
-		//   // .fail(function(data){
-		// 	 //  $("#jsonp").append("エラーです");
-		//   // });
-	 // });
-  // });
+<script type='text/javascript'>
+
    
       var element =document.createElement('script');
       element.src = 'http://penta.a.one.impact-ad.jp/dd?oid=b25b43b24a9e171b&rft=k&jsonp=callback';
       document.body.appendChild(element);
+        
       
-      var callback = function(data){
-        console.log(data);
-      };
+var callback = function(data){
+
+  var profile = data.aonesegments;
     
+    var aone_demographic = profile.demographic;
+    var aone_interest     = profile.interest;
+    var aone_zipcode_home = profile.zipcode.home;
+    var aone_zipcode_work = profile.zipcode.work;
+
+
+      document.open();
+  // demographic    
+      document.write('<li class="demographic">');
+      document.write("demographic");
+       
+        for (var i = 0; i < aone_demographic.length; i++){
+           document.write('<ul class=demographic' +[i]+'>');
+          // document.write(aone_demographic[i]);
+          document.write('</ul>');
+          };
+        $(function(){
+            var prism1Array = {"category": [ 
+                      {"id":3675340613,"category_1":"子供（高校生）有無","category_2":"高校生いない"},
+                      {"id":1327062654,"category_1":"性年齢","category_2":"男性：22~29歳"},
+                      {"id":3420598002,"category_1":"未既婚","category_2":"未婚"},
+                      {"id":3722116526,"category_1":"子供（未就学児）有無","category_2":"未就学児いない"},
+                      {"id":3383005355,"category_1":"世帯年収","category_2":"300万未満"},
+                      {"id":3633703723,"category_1":"子供（小学生）有無","category_2":"小学生いない"},
+            ]};
+            for(var index in prism1Array){
+                $('<p>'+ prism1Array.category[0].id+' / ' +prism1Array.category[0].category_1+' / '+prism1Array.category[0].category_2+'</p>' ).appendTo('ul.demographic0');
+                $('<p>'+ prism1Array.category[1].id+' / ' +prism1Array.category[1].category_1+' / '+prism1Array.category[1].category_2+'</p>' ).appendTo('ul.demographic1');
+                $('<p>'+ prism1Array.category[2].id+' / ' +prism1Array.category[2].category_1+' / '+prism1Array.category[2].category_2+'</p>' ).appendTo('ul.demographic2');
+                $('<p>'+ prism1Array.category[3].id+' / ' +prism1Array.category[3].category_1+' / '+prism1Array.category[3].category_2+'</p>' ).appendTo('ul.demographic3');
+                $('<p>'+ prism1Array.category[4].id+' / ' +prism1Array.category[4].category_1+' / '+prism1Array.category[4].category_2+'</p>' ).appendTo('ul.demographic4');
+                $('<p>'+ prism1Array.category[5].id+' / ' +prism1Array.category[5].category_1+' / '+prism1Array.category[5].category_2+'</p>' ).appendTo('ul.demographic5');
+            };
+        });  
+        
+      document.write('</li>');
+      
+  // interest
+      document.write('<li class="interest">');
+      document.write("interest");
+        for (var i = 0; i < aone_interest.length; i++){
+          document.write('<ul class=interest'+[i]+'>');
+          // document.write( aone_interest[i] );
+          document.write('</ul>');
+           
+            // var callbackFunk = function(array){
+            //   var test = array.prism3Array;
+            //   var category_1 = test.category_1;
+            // console.log(category_1);
+            // };
+          // var callbackFunk = function(prism3Array){
+          //   // var type_id = prism3Array.id;
+          //   // var type_cate1 = prism3Array.category_1;
+          //   // var type_cate2 = prism3Array.category_2;
+          //   // console.log(type_id);
+          //   // for (var j = 0; j < prism3Array.length; j++){
+          //   //   document.write(type_cate1[j] + "<br>");
+          //   // };
+          //   console.log(callbackFunk);
+          // };
+        };
+       $(function(){
+            var prism3Array = {"category": [ 
+                      {"id":3511973508,"category_1":"各種資料","category_2":""},
+                      {"id":3475145692,"category_1":"各種資料","category_2":"知識探索(Q&A)"},
+            ]};
+            for(var index in prism3Array){
+                $('<p>'+ prism3Array.category[0].id+' / ' +prism3Array.category[0].category_1+' / '+prism3Array.category[0].category_2+'</p>' ).appendTo('ul.interest0');
+                $('<p>'+ prism3Array.category[1].id+' / '+prism3Array.category[1].category_1+' / '+prism3Array.category[1].category_2+'</p>' ).appendTo('ul.interest1');
+            };
+        });
+      document.write('</li>');
+     
+      
+      document.write('<li>');
+      document.write("zipcode_home");
+        document.write('<ul>');
+        if (aone_zipcode_home.length == null ){
+          document.write("該当なし");
+        }else{
+        for (var i = 0; i < aone_zipcode_home.length; i++){
+          document.write(aone_zipcode_home[i]+"<br>");
+          };
+        };
+        document.write('</ul>'+"<br>");
+      document.write('</li>');
+      
+      document.write('<li>');
+      document.write("zipcode_work");
+        document.write('<ul>');
+        for (var i = 0; i < aone_zipcode_work.length; i++){
+          document.write(aone_zipcode_work[i]+"<br>");
+          };
+        document.write('</ul>'+"<br>");
+      document.write('</li>');
+      
+      document.close();
+};
+
 </script>
+</div>
+        <!--// var callback = function(data){-->
+        <!--//   console.log(data);-->
+        <!--// };-->
+        
+        <!--// var seg_callback = function(data.array[0]){-->
+        <!--//   console.log(data.segmentIds);-->
+        <!--// };-->
+
+<!--        <p>-->
+<!--<script type='text/javascript'>        -->
+<!--          document.write('<li>');-->
+<!--          for (var i = 0; i < 5; i++){-->
+<!--            document.write('<ul>')-->
+<!--          document.write(data);-->
+<!--          document.write('</ul>')-->
+<!--          };-->
+<!--          document.write('</li>');-->
+ 
